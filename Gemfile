@@ -73,3 +73,5 @@ end
 gem "geocoder"
 
 gem "figaro"
+
+gem 'httparty'
