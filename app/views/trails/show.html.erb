@@ -1,1 +1,14 @@
-<h2><%= @trail["name"] %></h2>
+<div class="booyah-box col-10 offset-1">
+  <h1><%= @trail["name"] %></h1>
+  <i><%= @trail["location"] %></i>
+  <br/><br/>
+  <p><%= @trail["summary"] %></p>
+
+
+  <div class="row">
+    <div class="col-12 col-md-4 col-sm-6">
+      <img src="<%= @trail["imgMedium"] %>"
+    </div>
+  </div>
+
+</div>

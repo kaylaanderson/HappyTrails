@@ -7,7 +7,7 @@ class Trail < ApplicationRecord
   base_uri 'hikingproject.com/data'
 
   def get_data
-    self.class.get("/get-trails?lat=40.027&maxResults=10&maxDistance=200&lon=-105.2519&key=#{ENV['TRAILS_API_KEY']}")
+    self.class.get("/get-trails?lat=35.4824&maxResults=10&maxDistance=200&lon=-86.1051&key=#{ENV['TRAILS_API_KEY']}")
   end
 
   def trails
