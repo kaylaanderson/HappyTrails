@@ -7,7 +7,7 @@ class TrailsController < ApplicationController
   end
 
   def show
-    @trail = Trail.new.trail_id["trail_id"].find(params[:id])
+    @trail = Trail.new.trail_id(params[:id])["trails"][0]
   end
   
 

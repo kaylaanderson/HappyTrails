@@ -14,12 +14,12 @@ class Trail < ApplicationRecord
     get_data.parsed_response
   end
 
-  def get_trails_by_id
-    self.class.get("/get-trails-by-id?ids=7001635&key=#{ENV['TRAILS_API_KEY']}")
+  def get_trails_by_id(id)
+    self.class.get("/get-trails-by-id?ids=7001635&key=#{ENV['TRAILS_API_KEY']}&ids=#{id}")
   end
 
-  def trail_id
-    get_trails_by_id.parsed_response
+  def trail_id(trail_id)
+    get_trails_by_id(trail_id).parsed_response
   end
 
 end
