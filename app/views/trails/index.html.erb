@@ -1,6 +1,6 @@
 <% @trails.each do |trail| %>
   <div class="booyah-box col-10 offset-1">
-    <h1><%= trail["name"] %></h1><br />
+    <h1><%= link_to trail["name"], trail_path(["trail"]) %></h1><br />
     <i><%= trail["location"] %></i><br />
     <p><%= trail["summary"] %></p><br />
   </div>

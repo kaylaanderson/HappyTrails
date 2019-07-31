@@ -75,3 +75,7 @@ gem "geocoder"
 gem "figaro"
 
 gem 'httparty'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+end
