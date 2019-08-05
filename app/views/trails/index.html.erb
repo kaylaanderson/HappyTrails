@@ -1,7 +1,10 @@
 <% @trails.each do |trail| %>
   <div class="booyah-box col-10 offset-1">
-    <h1><%= link_to trail["name"], trail_path(:id => trail["id"]) %></h1><br />
-    <i><%= trail["location"] %></i><br />
+    <div class="imgSqSmall col-12 col-sm-4 mx-auto">
+      <img src="<%= trail["imgSqSmall"] %>" class="img-thumbnail index-image" />
+    </div>
+    <h1><%= link_to trail["name"], trail_path(:id => trail["id"]) %></h1>
+    <i><%= trail["location"] %></i><br /><br />
     <p><%= trail["summary"] %></p><br />
   </div>
  

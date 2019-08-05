@@ -10,6 +10,7 @@
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 20px;
+  overflow: hidden;
 }
 
 
@@ -35,4 +36,9 @@ body {
   color: #5cb85c;
   font-family: 'chunkfiveroman', sans-serif;
   font-size: 26px;
+}
+
+
+.imgSqSmall {
+  float: right;
 }
