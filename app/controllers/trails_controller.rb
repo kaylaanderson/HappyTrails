@@ -1,20 +1,34 @@
 class TrailsController < ApplicationController
 
   def index
-    # request = 'get-trails?lat=40.027&maxResults=1&maxDistance=200&lon=-105.2519'
-    # @content = call_web_api(request)
     @trails = Trail.new.trails["trails"]
   end
 
   def show
-    @trail = Trail.new.trail_id(params[:id])["trails"][0]
+    t = Trail.new.trail_id(params[:id])["trails"]
+    @trail = (t.nil?) ? t : t[0]
   end
-  
 
-  private
+private
 
-  def trail_params
-    params.require(:trail).permit(:name, :location, :summary)
+  include HTTParty
+
+  base_uri 'hikingproject.com/data'
+
+  def get_data
+    self.class.get("/get-trails?lat=35.4824&maxResults=10&maxDistance=200&lon=-86.1051&key=#{ENV['TRAILS_API_KEY']}")
+  end
+
+  def trails
+    get_data.parsed_response
+  end
+
+  def get_trails_by_id(id)
+    self.class.get("/get-trails-by-id?ids=7001635&key=#{ENV['TRAILS_API_KEY']}&ids=#{id}")
+  end
+
+  def trail_id(trail_id)
+    get_trails_by_id(trail_id).parsed_response
   end
 
 end

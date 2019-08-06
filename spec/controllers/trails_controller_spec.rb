@@ -10,7 +10,7 @@ RSpec.describe TrailsController, type: :controller do
 
   describe "trails#show action" do 
     it "should successfully show the trails details page" do 
-      get :show
+      get :show, params: { id: "123" }
       expect(response).to have_http_status(:success)
     end
   end
