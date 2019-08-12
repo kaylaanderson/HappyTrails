@@ -12,6 +12,7 @@
 > * HTML
 > * CSS
 > * Bootstrap
+> * [The Hiking Project Data API](https://www.hikingproject.com/data)
 
 ## Deployment
 
